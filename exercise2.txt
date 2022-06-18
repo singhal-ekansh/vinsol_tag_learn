@@ -1,0 +1,51 @@
+1. # Create a repository and push to github.
+
+     git init  
+      
+     git remote add origin <link>
+     
+
+2. # Create two files in master branch, then create a tag 1.0.0 for first release from master.
+     
+     created 2 files 
+     git add .
+     git commit -m "initial commit"
+     git tag 1.0.0 -a -m "version 1.0.0"
+      
+     
+
+3. # Now, perform some changes in previous files and create another tag 1.0.1.
+     
+     made changes in file
+     git add .
+     git commit -m "version 1.0.1" 
+     git tag 1.0.1 -a -m "version 1.0.1"
+     
+
+4. # Now, create another file file3 and create a tag 1.1.0.
+
+     created file3  
+     git add .
+     git commit -a -m "added file 3"
+     git tag 1.1.0 -a -m "version 1.1.0"
+
+5. # Now in 1.0.1 release, do some changes in existing files and create another tag 1.0.2.
+     
+     git checkout 1.0.1
+     changes made in file
+     git add .
+     git commit -m "changes in version 1.0.1"
+     git tag 1.0.2 -a -m "version 1.0.2"
+
+6. # Also do some changes in release 1.1.0, create a tag for next release 1.1.1.   
+     
+     git checkout 1.1.0
+     changes in file 
+     git add .
+     git commit -m "changes in version 1.1.0"
+     git tag 1.1.1 -a -m "version 1.1.1 stable"
+     
+
+     git checkout master
+     git push origin master
+     git push --tags 
